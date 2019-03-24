@@ -2,17 +2,19 @@
 Crie uma variável qualquer, que receba um array com alguns valores aleatórios
 - ao menos 5 - (fica por sua conta os valores do array).
 */
-// ?
+var qualquer = [ 4, false, { a: 'a' }, 'heliton', null ];
 
 /*
 Crie uma função que receba um array como parâmetro, e retorne esse array.
 */
-// ?
+function returnaArray( arr ) {
+    return arr;
+}
 
 /*
 Imprima o segundo índice do array retornado pela função criada acima.
 */
-// ?
+console.log( returnaArray( qualquer )[1] );
 
 /*
 Crie uma função que receba dois parâmetros: o primeiro, um array de valores; e o
@@ -20,18 +22,24 @@ segundo, um número. A função deve retornar o valor de um índice do array que
 no primeiro parâmetro. O índice usado para retornar o valor, deve ser o número passado no
 segundo parâmetro.
 */
-// ?
+function twoParamentros( arr, num ) {
+    return arr[ num ];
+}
 
 /*
 Declare uma variável que recebe um array com 5 valores, de tipos diferentes.
 */
-// ?
+var fiveValues = [ true, 15.5, 'oliveira', { a: 'objeto' }, 100 ];
 
 /*
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-// ?
+console.log( twoParamentros( fiveValues, 0 ) );
+console.log( twoParamentros( fiveValues, 1 ) );
+console.log( twoParamentros( fiveValues, 2 ) );
+console.log( twoParamentros( fiveValues, 3 ) );
+console.log( twoParamentros( fiveValues, 4 ) );
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -47,30 +55,56 @@ propriedades:
 - Se o parâmetro não for passado, a função deve retornar o objeto com todos
 os livros.
 */
-// ?
+function book( bookName ) {
+    var nameBook = {
+        'Abra a cabeça Javascript': {
+            quantidadePaginas: 200,
+            autor: 'string',
+            editora: 'Nova Tec'
+        },
+
+        'JavaScript for kids': {
+            quantidadePaginas: 120,
+            autor: 'Nick Morgan',
+            editora: 'World'
+        },
+        
+        'Composing Software': {
+            quantidadePaginas: 521,
+            autor: 'Eric Elliott',
+            editora: 'Computing'
+        }
+    };
+
+    if( bookName !== undefined ) {
+        return nameBook[ bookName ];
+    }
+    return nameBook;
+}
+//console.log( book('Abra a cabeça Javascript') );
 
 /*
 Usando a função criada acima, imprima o objeto com todos os livros.
 */
-// ?
+console.log( book() );
 
 /*
 Ainda com a função acima, imprima a quantidade de páginas de um livro qualquer,
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-// ?
+console.log( 'O livro ' + 'Composing Sofware' + ' tem ' + book('Composing Software').quantidadePaginas + ' páginas!' );
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-// ?
+console.log( 'O autor do livro ' + 'JavaScript for kids' + ' é ' + book('JavaScript for kids').autor + '.' );
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-// ?
+console.log( 'O livro ' + 'JavaScript for kids' + ' foi publicado pela editora ' + book('JavaScript for kids').editora + '.' );
