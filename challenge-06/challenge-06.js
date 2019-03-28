@@ -5,6 +5,7 @@ Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
 var championship = 'Campionato Carioaca';
+console.log( championship );
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -33,18 +34,10 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition( position ) {
-    var ranker = position;
-    var colocacao;
-    
-    switch( position ) {
-        case 1: colocacao = teams[ --ranker ]; break;
-        case 2: colocacao = teams[ --ranker ]; break;
-        case 3: colocacao = teams[ --ranker ]; break;
-        case 4: colocacao = teams[ --ranker ]; break;
-        case 5: colocacao = teams[ --ranker ]; break;
-        default: return 'Não temos a informação do time que está nessa posição.';
+    if( position > teams.length ) {
+        return 'Não temos a informação do time que está nessa posição.';
     }
-    return 'O time que está em ' + position + 'º lugar é o ' + colocacao + '.';
+    return 'O time que está em ' + position + 'º lugar é o ' + teams[ --position ] + '.';
 }
 
 /*
@@ -80,17 +73,23 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
 function convertToHex( color ) {
     var hex;
     switch( color ) {
-        case 'red': hex = '#FF0000'; 
-        break;
-        case 'blue': hex = '#0000FF';
-        break;
-        case 'yellow': hex = '#FFFF00';
-        break;
-        case 'orange': hex = '#FFA500';
-        break;
-        case 'pink': hex = '#FFC0CB';
-        break;
-        default: return 'Não temos o equivalente hexadecimal para ' + color + '.';
+        case 'red': 
+            hex = '#FF0000'; 
+            break;
+        case 'blue': 
+            hex = '#0000FF';
+            break;
+        case 'yellow': 
+            hex = '#FFFF00';
+            break;
+        case 'orange': 
+            hex = '#FFA500';
+            break;
+        case 'pink': 
+            hex = '#FFC0CB';
+            break;
+        default: 
+            return 'Não temos o equivalente hexadecimal para ' + color + '.';
     }
     return 'O hexadecimal para a cor ' + color + ' é ' + hex + '.';
 }
