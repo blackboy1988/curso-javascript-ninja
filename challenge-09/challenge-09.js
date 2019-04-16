@@ -69,7 +69,7 @@
     function calculator( number1, number2 ) {
         return function( callback ) {
             return callback( number1, number2 );
-        }
+        };
     }
 
     /*
@@ -87,8 +87,8 @@
     uma função anônima que irá retornar a soma dos dois números que essa função
     anônima tem como seus argumentos.
     */
-    console.log( 'O resultado da soma é:', sum( function(x, y) { return x + y; } ) );
-    // ?
+    console.log( 'O resultado da soma é:' );
+    console.log( sum( function( x, y ) { return x + y; } ) );
 
     /*
     Agora declare outra variáveis chamadas `subtraction`, `multiplication`,
