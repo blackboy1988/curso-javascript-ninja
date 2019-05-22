@@ -62,18 +62,18 @@
     /*
     Converta os objetos que ficaram em `books` para strings.
     */
-    var strBook = JSON.stringify( books );
+    var books = JSON.stringify( books );
     console.log( '\nLivros em formato string:' );
 
     /*
     Mostre os livros nesse formato no console:
     */
-    console.log( strBook );
+    console.log( books );
 
     /*
     Converta os livros novamente para objeto.
     */
-    strBook = JSON.parse( strBook );
+    books = JSON.parse( books );
     console.log( '\nAgora os livros são objetos novamente:' );
     
     /*
@@ -81,7 +81,11 @@
     no formato abaixo:
         "[PROPRIEDADE]: [VALOR]"
     */
-    console.log( strBook );
+    for( var i = 0; i < books.length; i++ ) {
+        for( var prop in books[i] ) {
+            console.log( prop + ': ' + books[i][prop] );
+        }
+    }
     /*
     Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
     seu nome. Adicione seu nome completo no array.
