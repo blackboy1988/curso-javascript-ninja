@@ -64,7 +64,7 @@
         var temp = arr.reduce(function(acumulado, atual, index) {
             var separator = arr.length - 1 === index ? ' e ' : ', ';
             return acumulado + separator + atual;
-        });
+        }).concat( ' são meus amigos.' );
         return temp;
     }
     console.log( formatName2(friends) );
