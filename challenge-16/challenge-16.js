@@ -97,10 +97,10 @@
     var alternate = [];
     for( var i = 0; i < myName.length; i++  ) {
         if( i % 2 === 1 ) {
-            alternate.push( myName[i].charAt(0).toUpperCase() );
+            alternate.push( myName[i].toUpperCase() );
         }
         else {
-            alternate.push( myName[i].charAt(0).toLowerCase() );
+            alternate.push( myName[i].toLowerCase() );
         }
         
     }
