@@ -38,7 +38,7 @@
     */
     console.log( '\nFormatando CPFs corretamente:' );
     cpfs.forEach(function(cpf) {
-        console.log( cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3.$4') )
+        console.log( cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4') )
     });
 
     /*
