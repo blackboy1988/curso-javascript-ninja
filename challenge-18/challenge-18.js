@@ -17,14 +17,19 @@
     - "101.123-131x32"
     */
     console.log( 'Limpando CPFs:' );
-    function cleanCPF( cpf ) {
+    var cpfs = [ 
+    '049-214 3421-1',
+    '210.458.522-05',
+    '735 500 794 - 22',
+    '101.123-131x32' 
+    ];
+    function cleanCPF(cpf) {
         return cpf.match(/\d/g).join( '' );
     }
-    
-    console.log( cleanCPF("049-214 3421-1") );
-    console.log( cleanCPF("210.458.522-05") );
-    console.log( cleanCPF("735 500 794 - 22") );
-    console.log( cleanCPF("101.123-131x32") );    
+
+    cpfs.forEach(function(cpf) {
+        console.log( cleanCPF(cpf) );        
+    });
 
     /*
     Usando os CPFs limpos acima, deixe-os com a formatação correta de CPF.
@@ -32,19 +37,10 @@
     Mostre o resultado no console.
     */
     console.log( '\nFormatando CPFs corretamente:' );
-    var cpf1 = cleanCPF("049-214 3421-1");
-    var cpf2 = cleanCPF("210.458.522-05");
-    var cpf3 = cleanCPF("735 500 794 - 22");
-    var cpf4 = cleanCPF("101.123-131x32");
+    cpfs.forEach(function(cpf) {
+        console.log( cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3.$4') )
+    });
 
-    function formatCPF( cpf ) {
-        return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-    }
-    console.log( formatCPF( cpf1 ) );
-    console.log( formatCPF( cpf2 ) );
-    console.log( formatCPF( cpf3 ) );
-    console.log( formatCPF( cpf4 ) );    
-    
     /*
     Crie uma expressão regular que faça match com as palavras "junho" ou "julho",
     usando o mínimo de caracteres possíveis na regex.
