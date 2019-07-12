@@ -17,18 +17,20 @@
     - "101.123-131x32"
     */
     console.log( 'Limpando CPFs:' );
-    var cpfs = [ 
-    '049-214 3421-1',
-    '210.458.522-05',
-    '735 500 794 - 22',
-    '101.123-131x32' 
-    ];
-    function cleanCPF(cpf) {
+    
+    function cleanCPF( cpf ) {
         return cpf.match(/\d/g).join( '' );
     }
 
-    cpfs.forEach(function(cpf) {
-        console.log( cleanCPF(cpf) );        
+    var cpfs = [ 
+        '049-214 3421-1',
+        '210.458.522-05',
+        '735 500 794 - 22',
+        '101.123-131x32' 
+    ];
+
+    cpfs.forEach(function( cpf ) {
+        console.log( cleanCPF( cpf ) );        
     });
 
     /*
@@ -37,8 +39,11 @@
     Mostre o resultado no console.
     */
     console.log( '\nFormatando CPFs corretamente:' );
-    cpfs.forEach(function(cpf) {
-        console.log( cleanCPF(cpf).replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g, '$1.$2.$3-$4') )
+    cpfs.forEach(function( cpf ) {
+        console.log( cleanCPF( cpf ).replace( /(\d{3})(\d{3})(\d{3})(\d{2})/g, 
+            function( regex, p1, p2, p3, p4 ) {
+                return p1 + '.' + p2 + '.' + p3 + '-' + p4;
+            } ) );
     });
 
     /*
@@ -104,5 +109,5 @@
     */
     console.log( '\nFazer replace dos textos das tags:' );
     console.log('<h1>Título da página</h1><p>Este é um parágrafo</p><footer>Rodapé</footer>'
-    .replace(/<(\w+)>([^<]+)<(\/\w+)>/g, '<$1>O texto dentro da tag "$1" é "$2"<$3>\n' ));
+        .replace(/<(\w+)>([^<]+)<(\/\w+)>/g, '<$1>O texto dentro da tag "$1" é "$2"<$3>\n' ));
 })();      
