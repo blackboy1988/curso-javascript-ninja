@@ -12,7 +12,7 @@
     var marcos = {
       name: 'Marcos',
       lastName: 'Silva'
-    }
+    };
 
     /*
     Agora crie uma função chamada `getFullName` que retorne as propriedades
@@ -61,7 +61,7 @@
     entrados pelo usuário. Mostre para o usuário a seguinte frase:
     "Entre com alguns números que serão somados:"
     */
-    var userEntry = prompt( 'Entre com alguns números que serão somados: ' );
+    var userEntry = prompt( 'Entre com alguns números que serão somados:' );
 
     /*
     Mostre no console o valor entrado pelo usuário:
