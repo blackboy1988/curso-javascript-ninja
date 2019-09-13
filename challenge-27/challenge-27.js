@@ -74,37 +74,34 @@
     return Array.prototype.some.apply(this.elements, arguments);
   };
 
-  DOM.prototype.isArray = function isArray(param) {
+  DOM.isArray = function isArray(param) {
     return Object.prototype.toString.call(param) === '[object Array]';
   };
 
-  DOM.prototype.isObject = function isObject( param ) {
+  DOM.isObject = function isObject( param ) {
     return Object.prototype.toString.call(param) === '[object Object]';
   };
 
-  DOM.prototype.isFunction = function isFunction(param) {
+  DOM.isFunction = function isFunction(param) {
     return Object.prototype.toString.call(param) === '[object Function]';
   };
 
-  DOM.prototype.isNumber = function isNumber(param) {
+  DOM.isNumber = function isNumber(param) {
     return Object.prototype.toString.call(param) === '[object Number]';
   };
 
-  DOM.prototype.isString = function isString(param) {
+  DOM.isString = function isString(param) {
     return Object.prototype.toString.call(param) === '[object String]';
   };
 
-  DOM.prototype.isBoolean = function isBoolean(param) {
+  DOM.isBoolean = function isBoolean(param) {
     return Object.prototype.toString.call(param) === '[object Boolean]';
   };rototype.
 
-  //esta é a forma correta de criar um método estático.
   DOM.isNull = function isNull(param) {
     return Object.prototype.toString.call(param) === '[object Null]'
     || Object.prototype.toString.call(param) === '[object Undefined]';
   };
-
- // var DOM = new DOM();
 
   console.log( DOM.isNull(undefined) );
   console.log( Object.prototype.toString.call(undefined) );
